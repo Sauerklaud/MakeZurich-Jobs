@@ -29,10 +29,8 @@ pusher_client = pusher.Pusher(
 
 @sched.scheduled_job('interval', minutes=1)
 def timed_job():
-    print('before sending')
     pusher_client.trigger('my-channel', 'my-event', {
         message: '47.401996,8.444278'
     })
-    print('sent')
 
 sched.start()
