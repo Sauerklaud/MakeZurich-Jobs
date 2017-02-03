@@ -33,6 +33,6 @@ pusher_client = pusher.Pusher(
 @sched.scheduled_job('interval', seconds=5)
 def timed_job():
     pusher_client.trigger('my-channel', 'my-event', {long: '47.401996', lat: '8.444278'})
-
+    print('sent')
 
 sched.start()
