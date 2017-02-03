@@ -14,7 +14,7 @@ def index(request):
     for record in results:
         print(record['raw'])
 
-    return HttpResponse('<pre>' + print results[0]['raw'] + '</pre>')
+    return HttpResponse('<pre>' + results[0]['raw'] + '</pre>')
 
 def db(request):
 
