@@ -6,7 +6,7 @@ from .models import Greeting
 import requests
 
 def index(request):
-    #r = requests.get('http://httpbin.org/status/418')
+    r = requests.get('http://httpbin.org/status/418')
     #print r.text
     
     client = MongoClient('mongodb://back:1234@ds035059.mlab.com:35059/heroku_mqq5pbhp')
