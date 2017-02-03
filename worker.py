@@ -20,12 +20,19 @@ sched = BlockingScheduler()
 #    client.close()
 
 
-pusher_client = pusher.Pusher(app_id='298067', key='256b563cc59616398c15', secret='ad03aff71ebb5af9bacc', cluster='eu', ssl=True)
+pusher_client = pusher.Pusher(
+    app_id='298067', 
+    key='256b563cc59616398c15', 
+    secret='ad03aff71ebb5af9bacc', 
+    cluster='eu', 
+    ssl=True)
 
 @sched.scheduled_job('interval', minutes=1)
 def timed_job():
     print('before sending')
-    pusher_client.trigger('my-channel', 'my-event', {message : '47.401996,8.444278'})
+    pusher_client.trigger('my-channel', 'my-event', {
+        message: '47.401996,8.444278'
+    })
     print('sent')
 
 sched.start()
