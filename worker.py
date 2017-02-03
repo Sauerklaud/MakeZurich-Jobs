@@ -1,6 +1,8 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from pymongo import MongoClient
 import pusher
+import logging
+logging.basicConfig()
 
 sched = BlockingScheduler()
 
