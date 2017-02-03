@@ -11,10 +11,12 @@ def index(request):
     collection = db['airquality']
     results = collection.find()
 
+    noOfRecords = 0
     for record in results:
+        noOfRecords = noOfRecords + 1
         print(record['raw'])
-
-    return HttpResponse('<pre>' + results[0]['raw'] + '</pre>')
+    print(noOfRecords)
+    return HttpResponse('<pre>' + str(noOfRecords) + '</pre>')
 
 def db(request):
 
